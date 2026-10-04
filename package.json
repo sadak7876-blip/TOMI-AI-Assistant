@@ -1,0 +1,18 @@
+{
+  "name": "tomi-ai",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @tomi/web\" \"npm run dev --workspace @tomi/api\"",
+    "build": "npm run build --workspace @tomi/web && npm run build --workspace @tomi/api",
+    "lint": "npm run lint --workspace @tomi/web && npm run lint --workspace @tomi/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
